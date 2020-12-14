@@ -178,8 +178,13 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+      return str[i];
+    }
+  }
+  return null;
 }
 
 
@@ -381,11 +386,8 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(/* pathes */) {
-  // const commomDirectory = '';
-  // const pathesLikeArr = pathes.map((elem) => elem.split('/'));
-  // const base = pathesLikeArr[0];
-  // pathesLikeArr.slice(1).forEach((path) => {
-  //   path.forEach((elem) =>)
+  // const commonArr = pathes.map((elem) => {
+  //   return elem.split('').slice(-1);
   // });
   throw new Error('Not implemented');
 }
